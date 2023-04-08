@@ -2,6 +2,7 @@ import { Site } from "@/utilities/persistence/queries";
 import "./globals.css";
 import Navigation from "@/components/navigation";
 import { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 
 export async function generateMetadata(): Promise<Metadata> {
   const site = await Site();
@@ -45,6 +46,7 @@ export default (async function RootLayout({
         <footer>
           <hr className="w-1/5 border-1 border-dotted border-blue-500 pb-2" />
         </footer>
+        <Analytics />
       </body>
     </html>
   );
