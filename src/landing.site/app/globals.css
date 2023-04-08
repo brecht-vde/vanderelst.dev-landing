@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.gradient {
+    @apply bg-gradient-to-r from-blue-500 to-emerald-500 bg-clip-text text-transparent;
+}
