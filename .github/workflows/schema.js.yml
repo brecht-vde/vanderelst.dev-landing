@@ -6,10 +6,12 @@ name: build & run schema updates
 on:
   push:
     branches: [ "main" ]
-    paths: ["/src/landing.schema"]
+    paths:
+      - ./src/landing.schema
   pull_request:
     branches: [ "main" ]
-    paths: ["/src/landing.schema"]
+    paths: 
+      - ./src/landing.schema
   workflow_dispatch:
     
 env:
@@ -36,6 +38,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: "./src/landing.schema/package-lock.json"
     - run: npm ci
     - run: npm run build --if-present
     - run: npm run launch --if-present
