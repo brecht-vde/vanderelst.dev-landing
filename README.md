@@ -1,2 +1,2 @@
 # vanderelst.dev-landing
-Personal landing page: [vanderelst.dev](https://vanderelst.dev)
+Personal landing page: [vanderelst.dev](https://vanderelst.dev).
