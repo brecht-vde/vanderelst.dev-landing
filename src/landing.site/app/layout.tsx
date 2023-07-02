@@ -3,19 +3,20 @@ import "./globals.css";
 import Navigation from "@/components/navigation";
 import { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
-import GA from "@/components/ga";
 
 export async function generateMetadata(): Promise<Metadata> {
   const site = await Site();
   return {
     keywords: site.seo.keywords,
     authors: {
-      name: site.seo.author,
+      name: site.seo.author
     },
     description: site.seo.description,
     title: site.seo.title,
     openGraph: {
-      images: [site.seo.image.url],
+      images: [
+        site.seo.image.url
+      ]
     },
     robots: site.seo.robots,
     icons: {
@@ -46,7 +47,6 @@ export default (async function RootLayout({
           <hr className="w-1/5 border-1 border-dotted border-blue-500 pb-2" />
         </footer>
         <Analytics />
-        <GA />
       </body>
     </html>
   );
